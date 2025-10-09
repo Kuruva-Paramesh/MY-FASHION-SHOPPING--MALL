@@ -1,0 +1,107 @@
+import { useState } from "react";
+import Header from "./components/head/head.jsx";
+import "./App.css";
+import Nav from "./components/nav/nav.jsx";
+import Body from "./components/body/body.jsx";
+import Foot from "./components/foot/foot.jsx";
+
+function Register({ onBack , em ,ps}) {
+  const [username, setusername] = useState("");
+  const [email, setemail] = useState("");
+  const [pass, setpass] = useState("");
+  const [confirmpass, setconfirmpass] = useState("");
+  function Handle(){
+       if(username.length<5)
+       {
+        alert("please enter more than 5..")
+       }
+       else if(!email.includes("@"))
+       {
+        alert("please enter correct E-mail..");
+       }
+       else if(pass===confirmpass)
+       {
+        alert("Regristration succesfully..")
+        em(email);
+        ps(pass);
+         onBack();
+       }
+       else
+        {
+        alert("please check your confirm password");
+       }
+
+   
+
+        }
+  return (
+    <div className="register">
+      <h2>Register</h2>
+      <input type="text" placeholder="Username" onChange={(e)=>setusername(e.target.value)}/>
+      <input type="email" placeholder="Email" onChange={(e)=>setemail(e.target.value)}/>
+      <input type="password" placeholder="Password" onChange={(e)=>setpass(e.target.value)} />
+      <input type="password" placeholder="Confirm Password" onChange={(e)=>setconfirmpass(e.target.value)}/>
+      <button onClick={Handle}>Register</button><br />
+    </div>
+  );
+}
+
+export default function App() {
+  const [isRegister, setIsRegister] = useState(false);
+  const [islogin, setIslogin] = useState(false);
+  const [emaillog, setemaillog] = useState("");
+  const [passlog, setpasslog] = useState("");
+  const [regmail,setregmail]=useState("");
+    const [regpass,setregpass]=useState("")
+
+
+   function Handlelogin()
+       {
+      if(regmail!==emaillog)
+      {
+      alert("please register..");
+      }
+      else if(regpass!==passlog) {
+        alert("password not match..");
+      }
+      else{
+        setIslogin(true);
+      }
+
+
+       }
+       if(islogin){
+        return (<>
+        <Header/>
+        <Nav/>
+        <Body/>
+        <Foot/>
+
+
+
+    </>);
+       }
+
+  return (
+    <div className="all">
+
+    <div className="login">
+      {isRegister ? (
+        <Register onBack={() => setIsRegister(false) } em={setregmail} ps={setregpass} />
+      ) : (
+        <>
+          <h2>Login</h2>
+          <input type="email" placeholder="Email" onChange={(o)=>setemaillog(o.target.value) } />
+          <input type="password" placeholder="Password" onChange={(o)=>setpasslog(o.target.value)} /><br />
+          <input type="checkbox" /> Read Me<br />
+          <button onClick={Handlelogin}>Login</button><br />
+          <b>Don't have an account ?
+          <u onClick={() => setIsRegister(true)}>Register</u></b>
+        </>
+      )}
+    </div>
+
+
+    </div>
+  );
+}
