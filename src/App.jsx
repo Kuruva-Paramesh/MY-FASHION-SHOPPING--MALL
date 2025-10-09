@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Header from "./components/head/head.jsx";
 import "./App.css";
-import Nav from "./components/nav/nav.jsx";
+import Context from "./store.jsx";
+import  Nav from "./components/nav/nav.jsx";
 import Body from "./components/body/body.jsx";
 import Foot from "./components/foot/foot.jsx";
 
@@ -52,7 +53,9 @@ export default function App() {
   const [emaillog, setemaillog] = useState("");
   const [passlog, setpasslog] = useState("");
   const [regmail,setregmail]=useState("");
-    const [regpass,setregpass]=useState("")
+  const [regpass,setregpass]=useState("");
+  const[select1,setselected]=useState("");
+
 
 
    function Handlelogin()
@@ -71,15 +74,13 @@ export default function App() {
 
        }
        if(islogin){
-        return (<>
+        return (  <Context.Provider value={{select1 , setselected}}>
+
         <Header/>
         <Nav/>
         <Body/>
         <Foot/>
-
-
-
-    </>);
+        </Context.Provider>);
        }
 
   return (

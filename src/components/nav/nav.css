@@ -5,6 +5,12 @@
     background:black;
     height:40px;
     text-align:center;
+    position:fixed;
+    top:40px;
+    margin-top:10px;
+    margin-bottom:50px;
+    z-index:100;
+   
 }
 .nav button{
     margin:5px 0px ;
