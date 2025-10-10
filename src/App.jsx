@@ -5,8 +5,10 @@ import Context from "./store.jsx";
 import  Nav from "./components/nav/nav.jsx";
 import Body from "./components/body/body.jsx";
 import Foot from "./components/foot/foot.jsx";
+import { BrowserRouter } from "react-router-dom";
+import Rout from "./components/router/router.jsx";
 
-function Register({ onBack , em ,ps}) {
+function Register({ onBack , em ,ps,usr}) {
   const [username, setusername] = useState("");
   const [email, setemail] = useState("");
   const [pass, setpass] = useState("");
@@ -25,6 +27,7 @@ function Register({ onBack , em ,ps}) {
         alert("Regristration succesfully..")
         em(email);
         ps(pass);
+        usr(username);
          onBack();
        }
        else
@@ -55,6 +58,8 @@ export default function App() {
   const [regmail,setregmail]=useState("");
   const [regpass,setregpass]=useState("");
   const[select1,setselected]=useState("");
+    const[us,setus]=useState("");
+
 
 
 
@@ -74,13 +79,17 @@ export default function App() {
 
        }
        if(islogin){
-        return (  <Context.Provider value={{select1 , setselected}}>
-
+        return (  <Context.Provider value={{select1 , setselected,regmail,us}}>
+          <div className="tol">
+        <BrowserRouter>
         <Header/>
         <Nav/>
-        <Body/>
+        <Rout/>
         <Foot/>
+        </BrowserRouter>
+        </div>
         </Context.Provider>);
+        
        }
 
   return (
@@ -88,7 +97,7 @@ export default function App() {
 
     <div className="login">
       {isRegister ? (
-        <Register onBack={() => setIsRegister(false) } em={setregmail} ps={setregpass} />
+        <Register onBack={() => setIsRegister(false) } em={setregmail} ps={setregpass} usr={setus}/>
       ) : (
         <>
           <h2>Login</h2>

@@ -12,7 +12,11 @@ export default function Body(){
     },[select1]);
    
 
-    return (<div className="body">
+    return (
+    <div className="body">
+        <div className="hbody">
+         Welcome To My Fashion<br/> Shopping to All...
+        </div>
         <div className="halfbody">
         {
             prod.map((val,count)=>(

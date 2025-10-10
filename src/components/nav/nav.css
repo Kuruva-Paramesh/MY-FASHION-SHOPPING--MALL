@@ -5,11 +5,10 @@
     background:black;
     height:40px;
     text-align:center;
-    position:fixed;
-    top:40px;
-    margin-top:10px;
-    margin-bottom:50px;
-    z-index:100;
+    margin-top:5px;
+    margin-bottom: 0px;
+    box-shadow: 0 0 10px black;
+
    
 }
 .nav button{
@@ -21,8 +20,11 @@
     background:none;
     box-shadow:0px 0px 5px lightgray;
     border-radius: 3px;
-    color:white;
 
+}
+.h1{
+    color:white;
+    text-decoration: none;
 }
 select{
     width:15%;

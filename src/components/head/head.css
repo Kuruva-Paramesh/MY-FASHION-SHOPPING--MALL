@@ -4,11 +4,9 @@
     display:flex;
     justify-content: space-around;
     background-color: lightgray;
-    position:fixed;
-    top:0px;
-    z-index:100;
-    margin-right:0px;
-    
+    box-shadow: 0 0 10px black;
+
+   
 }
 .header input{
     width:70%;
