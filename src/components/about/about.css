@@ -1,0 +1,77 @@
+.detail{
+    background-image:url("../../assets/images/loginb.png");
+    background-size:100% 100%;
+   text-align:center;
+   padding-bottom:20px;
+   box-shadow:0 0 10px black;
+}
+table{
+    border:2px solid black;
+    margin-left:100px;
+    width:100%;
+    th {
+        border:2px solid black;
+        padding:20px;
+        font-size:20px;
+
+    }
+    td{
+                border:2px solid black;
+                padding:20px;
+                font-size:20px;
+
+    }
+
+    }
+.title{
+    font-size:25px;
+    font-style:italic;
+    font-weight:bold;
+    padding-top:50px;
+}
+h3{
+    font-size:25px;
+    font-style:italic;
+    font-weight:bold;
+    padding-top:50px;
+}
+h3{
+    font-size:20px;
+    font-style:italic;
+    font-weight:bold;
+    padding-top:50px;
+}
+@media(min-width:320px) and (max-width:768px){
+    table{
+    border:2px solid black;
+    margin-left:0px;
+    width:100%;
+    th {
+        border:2px solid black;
+        padding:2px;
+        font-size:12px;
+
+    }
+    td{
+                border:2px solid black;
+                padding:2px;
+                font-size:12px;
+
+    }
+
+    }
+.title{
+    font-size:15px;
+    font-style:italic;
+    font-weight:bold;
+    padding-top:50px;
+}
+h3{
+    font-size:14px;
+    font-style:italic;
+    font-weight:bold;
+    padding-top:50px;
+}
+
+
+}

@@ -59,6 +59,7 @@ export default function App() {
   const [regpass,setregpass]=useState("");
   const[select1,setselected]=useState("");
     const[us,setus]=useState("");
+  const [count,setcount]=useState([]);
 
 
 
@@ -79,7 +80,7 @@ export default function App() {
 
        }
        if(islogin){
-        return (  <Context.Provider value={{select1 , setselected,regmail,us}}>
+        return (  <Context.Provider value={{select1 , setselected,regmail,us ,count,setcount}}>
           <div className="tol">
         <BrowserRouter>
         <Header/>

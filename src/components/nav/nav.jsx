@@ -31,7 +31,7 @@ import Rout from "../router/router.jsx"
     <button> <Link to="/shop" className="h1" >Shop</Link></button>
     <button> <Link to="/account" className="h1" >Acount</Link></button>
     <button> <Link to="/contact"  className="h1">Contact</Link></button>
-    <button> <Link to="/bill" className="h1" >Bill</Link></button>
+    <button> <Link to="/bill" className="h1" >Order</Link></button>
 </div>);
 
 }

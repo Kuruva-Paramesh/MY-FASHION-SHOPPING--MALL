@@ -1,12 +1,15 @@
 import "./head.css";
-import cart from "../../assets/images/myfashioncart.jpg";
+import{useContext} from "react";
+import Context from "../../store.jsx";
 import logo from "../../assets/images/myfashion.webp";
 function Header(){
+    const{count}=useContext(Context);
 
-return (<div className="header">
+return (
+<div className="header">
     <img src={logo} alt="logo"/>
     <input type="search" placeholder="🔍"/>
- <img src={cart} alt="Cart" />
+    <div className="cart"><p>{count.length}</p></div>  
 </div>);
 
 

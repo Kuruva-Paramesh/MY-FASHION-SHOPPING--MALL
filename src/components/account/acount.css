@@ -1,0 +1,29 @@
+ .account{
+    width:100%;
+     background-image:url("../../assets/images/loginb.png");
+     background-size:100% 100%;
+     height:100%;
+     margin-top: 2px;
+
+
+    }
+    .h{
+        text-align:center;
+        padding-top:50px;
+        font-size:25px;
+        font-weight:bold;
+        text-decoration: underline;
+    }
+    .account h3{
+        padding:10px 50px;
+    }
+@media(min-width:320px )and (max-width:768px){
+    .account h3{
+    font-size:13px;
+    }
+    .h{
+    font-size:15px;
+
+    }
+
+}
