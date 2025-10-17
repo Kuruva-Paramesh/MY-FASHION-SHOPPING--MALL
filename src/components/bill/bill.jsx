@@ -46,7 +46,7 @@ export default function Bill(){
 
 
        ):( 
-        <div>
+        <div className="acount">
         <div className="h"> YOU ORDER PRODUCTS</div>
         <table>
             <thead>

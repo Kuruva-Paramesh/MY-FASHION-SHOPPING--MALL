@@ -4,11 +4,12 @@ export default function Foot(){
     
      <div className="contact">
         <h3>MY FASHION <br/>SHOPING MALL</h3>
-          <p>Phone: <br/>+91 98765 43210</p>
-          <p>Email:<br/> support@myfashion.com</p>
-          <p>Address: <br/>Kurnool, <br/>Andhra Pradesh, <br/>India</p>
+          <p>Name:k.paramesh<br/>Phone: <br/>+91 8688936412</p>
+          <p>Email:<br/> myfashion@gmail.com</p>
+          <p>Address: <br/>Kurnool, <br/>Andhra Pradesh,India</p>
         </div>
-    
+       
+     
     
     </>);
 }

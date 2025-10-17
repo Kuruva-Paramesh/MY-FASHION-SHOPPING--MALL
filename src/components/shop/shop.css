@@ -1,76 +1,99 @@
-.shop-cont{
-    width:100%;
-    display:grid;
-    grid-template-columns:20% 20% 20% 20% 20%;
-    padding:0px;
-    background-color: lightgray;
-    margin-bottom:5px;
-    padding-bottom:10px;
-    margin-top:5px; 
-    background-image:url("../../assets/images/loginb.png")
+.shop-cont {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 19%);
+    padding: 0px;
+    background-color:rgb(108, 103, 104);
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+    margin-top: 5px;
+    gap: 10px;
 }
- .p-card{
-width:230px;
-height:340px;
-box-shadow: 0 0 10px black;
-border-radius:10px;
-text-align:center;
-margin-top:20px;
-padding-top:15px;
-margin-left:5px;
-margin-right:0px;
-background:white;
+
+.p-card {
+    width: 230px;
+    height: 340px;
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+    text-align:center;
+    margin-top: 20px;
+    padding-top: 15px;
+    margin-left: 15px;
+    background:white;
+    transition: transform 0.3s ease;
 }
+
 .p-card img {
-    transition:4s;
-    width:200px;
-    height:250px;
+    width: 200px;
+    height: 250px;
     box-shadow: 0 0 10px lightgray;
+    transition: transform 0.4s ease;
+}
 
+.p-card img:hover {
+    transform: scale(1.1);
 }
-.p-card img:hover{
-transform:scale(1.1)
-}
-@media (min-width:320px) and (max-width: 500px) {
+
+@media (min-width: 320px) and (max-width: 500px) {
     .shop-cont {
-        display: grid;
-        grid-template-columns:50% 50%;
-        width:100%;
+        grid-template-columns: 50% 50%;
+        gap: 5px;
+    }
 
+    .p-card {
+        width: 80%;
+        height: 180px;
+        font-size: 10px;
+        margin-left: 15px;
+        margin-top: 15px;
+        padding-top: 10px;
     }
-    .p-card{
-        width:80%;
-        height:180px;
-        font-size:10px;
-        margin-left:15px;
-    }
+
     .p-card img {
-        width:90px;
-        height:100px;
-
-
-    }
-
-    
-}
-@media (min-width:500px) and (max-width: 1000px) {
-    .shop-cont{
-        display: grid;
-        grid-template-columns:30% 30% 30%;  
-    }
-    .p-card{
-        width:150px;
-        height:230px;
-        font-size:14px;
-         margin-left:30px;
-
-    }
-    .p-card img {
-        width:100px;
-        height:130px;
-        margin-bottom:5px;
-
-
+        width: 90px;
+        height: 100px;
     }
 }
 
+@media (min-width: 501px) and (max-width: 1000px) {
+    .shop-cont {
+        grid-template-columns: 30% 30% 30%;
+        gap: 10px;
+    }
+
+    .p-card {
+        width: 150px;
+        height: 230px;
+        font-size: 14px;
+        margin-left: 15px;
+        margin-top: 15px;
+        padding-top: 10px;
+    }
+
+    .p-card img {
+        width: 100px;
+        height: 130px;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 300px) {
+    .shop-cont {
+        grid-template-columns: 100%;
+        gap: 5px;
+    }
+
+    .p-card {
+        width: 90%;
+        height: 160px;
+        font-size: 9px;
+        margin-left: 5%;
+        margin-top: 10px;
+        padding-top: 8px;
+    }
+
+    .p-card img {
+        width: 80px;
+        height: 90px;
+    }
+}

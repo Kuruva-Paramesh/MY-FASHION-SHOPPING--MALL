@@ -16,11 +16,11 @@ function Register({ onBack , em ,ps,usr}) {
   function Handle(){
        if(username.length<5)
        {
-        alert("please enter more than 5..")
+        alert("Please enter more than 5 letters")
        }
        else if(!email.includes("@"))
        {
-        alert("please enter correct E-mail..");
+        alert("Please enter correct E-mail..");
        }
        else if(pass===confirmpass)
        {
@@ -53,12 +53,12 @@ function Register({ onBack , em ,ps,usr}) {
 export default function App() {
   const [isRegister, setIsRegister] = useState(false);
   const [islogin, setIslogin] = useState(false);
-  const [emaillog, setemaillog] = useState("");
-  const [passlog, setpasslog] = useState("");
-  const [regmail,setregmail]=useState("");
-  const [regpass,setregpass]=useState("");
-  const[select1,setselected]=useState("");
-    const[us,setus]=useState("");
+  const [emaillog, setemaillog] = useState("reg");
+  const [passlog, setpasslog] = useState("log");
+  const [regmail,setregmail]=useState("email");
+  const [regpass,setregpass]=useState("pass");
+  const[select1,setselected]=useState("white");
+  const[us,setus]=useState("us");
   const [count,setcount]=useState([]);
 
 
@@ -68,20 +68,20 @@ export default function App() {
        {
       if(regmail!==emaillog)
       {
-      alert("please register..");
+      alert("Please register..");
       }
       else if(regpass!==passlog) {
-        alert("password not match..");
+        alert("Password not matched..");
       }
       else{
-        setIslogin(true);
+        setIslogin(true)
       }
 
 
        }
        if(islogin){
         return (  <Context.Provider value={{select1 , setselected,regmail,us ,count,setcount}}>
-          <div className="tol">
+          <div className="tol"  style={{background:select1,color: select1 === "black" ? "white" : "black",width:"100%"}}>
         <BrowserRouter>
         <Header/>
         <Nav/>
@@ -104,7 +104,7 @@ export default function App() {
           <h2>Login</h2>
           <input type="email" placeholder="Email" onChange={(o)=>setemaillog(o.target.value) } />
           <input type="password" placeholder="Password" onChange={(o)=>setpasslog(o.target.value)} /><br />
-          <input type="checkbox" /> Read Me<br />
+          <input type="checkbox"/> Read Me<br/>
           <button onClick={Handlelogin}>Login</button><br />
           <b>Don't have an account ?
           <u onClick={() => setIsRegister(true)}>Register</u></b>

@@ -1,9 +1,9 @@
 .header{
     width:100%;
-    height:55px;
+    height:58px;
     display:flex;
     justify-content: space-around;
-    background-color: lightgray;
+    background:lightgray;
     box-shadow: 0 0 10px black;
 
    
@@ -12,24 +12,33 @@
     width:70%;
     height:40px;
     outline:none;
-    margin-top:5px;
+    margin-top:2px;
     border-radius:100px;
     padding-left:30px;
+    border:none;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 .header img{
-width:50px;
-height:50px;
+margin-top:2px;
+width:45px;
+height:45px;
 border-radius:100px;
+box-shadow: 0 0 10px black;
+
+
 
 }
 .cart{
-    width:50px;
-    height:50px;
+    width:45px;
+    height:45px;
     background-image:url("../../assets/images/myfashioncart.jpg");
     background-size:100% 100%;
     text-align:center;
     border-radius: 50%;
     margin-top:2px;
+    box-shadow: 0 0 10px black;
+
+
 }
 @media(min-width:320px)and (max-width:768px){
    .header input{

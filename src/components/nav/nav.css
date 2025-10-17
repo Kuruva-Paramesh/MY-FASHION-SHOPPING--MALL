@@ -2,14 +2,13 @@
     width:100%;
     display:flex;
     justify-content: space-evenly;
-    background:black;
+    background-color: black;  
     height:40px;
     text-align:center;
-    margin-top:5px;
     margin-bottom:0px;
     box-shadow: 0 0 10px black;
 
-   
+    
 }
 .nav button{
     margin:5px 0px ;
@@ -42,17 +41,18 @@ option{
 }
 @media(min-width:320px)and (max-width:768px){
     .nav button{
-        font-size:6px;
+        font-size:10px;
         font-weight:bold;
         height:20px;
         margin-top:10px;
+        width:50px;
 
     }
     select{
 
-        font-size:6px;
+        font-size:8px;
         font-weight:bold;
         height:20px;
         margin-top:10px;
     }
-}
+} 

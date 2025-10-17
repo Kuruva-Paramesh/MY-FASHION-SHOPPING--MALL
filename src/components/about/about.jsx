@@ -10,7 +10,6 @@ export default function About(){
         <th>Category</th>
         <th>Supplier / Brand</th>
         <th>Contact / Phone</th>
-        <th>Email</th>
         <th>Website</th>
       </tr>
     </thead>
@@ -19,20 +18,17 @@ export default function About(){
         <td class="category">Clothing / Apparel</td>
         <td>The Ethnic World</td>
         <td><a href="tel:+918866591335">+91 88665 91335</a></td>
-        <td><a href="theethnicworld@gmail.com">gmail.com</a></td>
         <td><a href="https://theethnicworld.com" target="_blank" rel="noopener">theethnicworld.com</a></td>
       </tr>
       <tr>
         <td class="category">Clothing / Apparel</td>
         <td>Cottonduniya</td>
         <td><a href="tel:+917819991335">+91 78199 91335</a></td>
-        <td>-----</td>
         <td><a href="https://www.cottonduniya.com" target="_blank" rel="noopener">cottonduniya.com</a></td>
       </tr>
       <tr>
         <td class="category">Clothing / Apparel</td>
         <td>Billoomi Fashion</td>
-        <td>-----</td>
         <td>-----</td>
         <td><a href="https://www.billoomifashion.com" target="_blank" rel="noopener">billoomifashion.com</a></td>
       </tr>
@@ -40,13 +36,11 @@ export default function About(){
         <td class="category">Clothing / Apparel</td>
         <td>Srokam Exports</td>
         <td>-----</td>
-        <td>-----</td>
         <td><a href="https://www.srokam.com" target="_blank" rel="noopener">srokam.com</a></td>
       </tr>
       <tr>
         <td class="category">Clothing / Apparel</td>
         <td>The Odd Factory</td>
-        <td>-----</td>
         <td>-----</td>
         <td><a href="https://theoddfactory.com" target="_blank" rel="noopener">theoddfactory.com</a></td>
       </tr>
@@ -55,27 +49,23 @@ export default function About(){
         <td class="category">Sports / Equipment</td>
         <td>RS Sports Goods (Meerut)</td>
         <td><a href="tel:+918279707441">+91 82797 07441</a></td>
-        <td>----</td>
         <td><a href="https://www.instagram.com/rssportsmeerut" target="_blank" rel="noopener">instagram.com</a></td>
       </tr>
       <tr>
         <td class="category">Sports / Equipment</td>
         <td>Vinex Sports / Bhalla International</td>
         <td>----</td>
-        <td>-----</td>
         <td><a href="https://www.vinex.com" target="_blank" rel="noopener">vinex.com</a></td>
       </tr>
       <tr>
         <td class="category">Sports / Equipment</td>
         <td>National Sports</td>
         <td>----</td>
-        <td>-----</td>
         <td><a href="https://www.national-sport.com" target="_blank" rel="noopener">national-sport.com</a></td>
       </tr>
       <tr>
         <td class="category">Sports / Equipment</td>
         <td>Delux Sports</td>
-        <td>-----</td>
         <td>-----</td>
         <td><a href="https://www.deluxsports.com" target="_blank" rel="noopener">deluxsports.com</a></td>
       </tr>
@@ -83,7 +73,6 @@ export default function About(){
         <td class="category">Sports / Equipment</td>
         <td>SGMEA (Jalandhar)</td>
         <td><a href="tel:+919999157707">+91 99991 57707</a></td>
-        <td><a href="mailto:sgmea@sgmea.org">sgmea@.org</a></td>
         <td><a href="https://www.sgmea.org" target="_blank" rel="noopener">sgmea.org</a></td>
       </tr>
 
@@ -91,13 +80,11 @@ export default function About(){
         <td class="category">Home Appliances</td>
         <td>Haier (India)</td>
         <td>-----</td>
-        <td>-----</td>
         <td><a href="https://www.haier.com/in" target="_blank" rel="noopener">haier.com/in</a></td>
       </tr>
       <tr>
         <td class="category">Home Appliances</td>
         <td>LG India</td>
-        <td>-----</td>
         <td>-----</td>
         <td><a href="https://www.lg.com/in" target="_blank" rel="noopener">lg.com/in</a></td>
       </tr>
@@ -105,14 +92,12 @@ export default function About(){
         <td class="category">Toys / Model Cars</td>
         <td>Majorette (die-cast)</td>
         <td>-----</td>
-        <td>-----</td>
         <td><a href="https://www.majorette.com" target="_blank" rel="noopener">majorette.com</a></td>
       </tr>
       <tr>
         <td class="category">Toys / Model Cars</td>
         <td>Funskool / Hamleys (India)</td>
         <td>------</td>
-        <td>-----</td>
         <td><a href="https://www.funskoolindia.com" target="_blank" rel="noopener">funskoolindia.com</a></td>
       </tr>
 

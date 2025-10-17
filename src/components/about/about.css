@@ -1,77 +1,65 @@
-.detail{
-    background-image:url("../../assets/images/loginb.png");
-    background-size:100% 100%;
-   text-align:center;
-   padding-bottom:20px;
-   box-shadow:0 0 10px black;
-}
-table{
-    border:2px solid black;
-    margin-left:100px;
-    width:100%;
-    th {
-        border:2px solid black;
-        padding:20px;
-        font-size:20px;
-
-    }
-    td{
-                border:2px solid black;
-                padding:20px;
-                font-size:20px;
-
-    }
-
-    }
-.title{
-    font-size:25px;
-    font-style:italic;
-    font-weight:bold;
-    padding-top:50px;
-}
-h3{
-    font-size:25px;
-    font-style:italic;
-    font-weight:bold;
-    padding-top:50px;
-}
-h3{
-    font-size:20px;
-    font-style:italic;
-    font-weight:bold;
-    padding-top:50px;
-}
-@media(min-width:320px) and (max-width:768px){
-    table{
-    border:2px solid black;
-    margin-left:0px;
-    width:100%;
-    th {
-        border:2px solid black;
-        padding:2px;
-        font-size:12px;
-
-    }
-    td{
-                border:2px solid black;
-                padding:2px;
-                font-size:12px;
-
-    }
-
-    }
-.title{
-    font-size:15px;
-    font-style:italic;
-    font-weight:bold;
-    padding-top:50px;
-}
-h3{
-    font-size:14px;
-    font-style:italic;
-    font-weight:bold;
-    padding-top:50px;
+.detail {
+    background:rgb(225, 219, 222);
+    background-size: cover; /* maintain aspect ratio */
+    background-position: center;
+    text-align: center;
+    padding-bottom: 20px;
+    box-shadow: 0 0 10px black;
 }
 
+/* Table Styles */
+table {
+    border: 2px solid black;
+    width: 90%; /* leave a little space on sides */
+    margin: 40px auto; /* center table horizontally */
+    border-collapse: collapse; /* remove double borders */
+}
 
+table th, table td {
+    border: 2px solid black;
+    padding: 20px;
+    font-size: 20px;
+}
+
+/* Title and Headings */
+.title, h3 {
+    font-size: 25px;
+    font-style: italic;
+    font-weight: bold;
+    padding-top: 50px;
+}
+
+/* Responsive for tablets and phones */
+@media (max-width: 768px) {
+    table {
+        width: 95%;
+        margin: 20px auto; /* center on small screens */
+    }
+
+    table th, table td {
+        padding: 6px;
+        font-size: 14px;
+    }
+
+    .title, h3 {
+        font-size: 14px;
+        padding-top: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    table {
+        width: 95%;
+        margin: 15px auto;
+    }
+
+    table th, table td {
+        padding: 4px;
+        font-size: 12px;
+    }
+
+    .title, h3 {
+        font-size: 16px;
+        padding-top: 20px;
+    }
 }
