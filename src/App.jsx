@@ -2,117 +2,161 @@ import { useState } from "react";
 import Header from "./components/head/head.jsx";
 import "./App.css";
 import Context from "./store.jsx";
-import  Nav from "./components/nav/nav.jsx";
+import Nav from "./components/nav/nav.jsx";
 import Body from "./components/body/body.jsx";
 import Foot from "./components/foot/foot.jsx";
 import { BrowserRouter } from "react-router-dom";
 import Rout from "./components/router/router.jsx";
 
-function Register({ onBack , em ,ps,usr}) {
-  const [username, setusername] = useState("");
-  const [email, setemail] = useState("");
-  const [pass, setpass] = useState("");
-  const [confirmpass, setconfirmpass] = useState("");
-  function Handle(){
-       if(username.length<5)
-       {
-        alert("Please enter more than 5 letters")
-       }
-       else if(!email.includes("@"))
-       {
-        alert("Please enter correct E-mail..");
-       }
-       else if(pass===confirmpass)
-       {
-        alert("Regristration succesfully..")
-        em(email);
-        ps(pass);
-        usr(username);
-         onBack();
-       }
-       else
-        {
-        alert("please check your confirm password");
-       }
+function Register({ onBack, em, ps, usr }) {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
+  const [confirmPass, setConfirmPass] = useState("");
 
-   
+  function handleRegister() {
+    if (username.trim().length < 5) {
+      alert("Please enter a username with at least 5 letters");
+    } else if (!email.includes("@") || !email.includes(".")) {
+      alert("Please enter a valid email address");
+    } else if (pass.length < 5) {
+      alert("Password must be at least 5 characters long");
+    } else if (pass !== confirmPass) {
+      alert("Passwords do not match!");
+    } else {
+      alert("Registration successful ✅");
+      em(email);
+      ps(pass);
+      usr(username);
+      onBack(); // Go back to login
+    }
+  }
 
-        }
   return (
     <div className="register">
       <h2>Register</h2>
-      <input type="text" placeholder="Username" onChange={(e)=>setusername(e.target.value)}/>
-      <input type="email" placeholder="Email" onChange={(e)=>setemail(e.target.value)}/>
-      <input type="password" placeholder="Password" onChange={(e)=>setpass(e.target.value)} />
-      <input type="password" placeholder="Confirm Password" onChange={(e)=>setconfirmpass(e.target.value)}/>
-      <button onClick={Handle}>Register</button><br />
+      <input
+        type="text"
+        placeholder="Username"
+        onChange={(e) => setUsername(e.target.value)}
+      />
+      <input
+        type="email"
+        placeholder="Email"
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        onChange={(e) => setPass(e.target.value)}
+      />
+      <input
+        type="password"
+        placeholder="Confirm Password"
+        onChange={(e) => setConfirmPass(e.target.value)}
+      />
+      <button onClick={handleRegister}>Register</button><br />
+      <u onClick={onBack} style={{ cursor: "pointer" }}>
+        Go back to Login
+      </u>
     </div>
   );
 }
 
 export default function App() {
   const [isRegister, setIsRegister] = useState(false);
-  const [islogin, setIslogin] = useState(false);
-  const [emaillog, setemaillog] = useState("reg");
-  const [passlog, setpasslog] = useState("log");
-  const [regmail,setregmail]=useState("email");
-  const [regpass,setregpass]=useState("pass");
-  const[select1,setselected]=useState("white");
-  const[us,setus]=useState("us");
-  const [count,setcount]=useState([]);
+  const [isLogin, setIsLogin] = useState(false);
 
+  // Login & Registration Data
+  const [emailLogin, setEmailLogin] = useState("");
+  const [passLogin, setPassLogin] = useState("");
+  const [regMail, setRegMail] = useState("");
+  const [regPass, setRegPass] = useState("");
+  const [user, setUser] = useState("");
 
+  // Context values
+  const [theme, setTheme] = useState("white");
+  const [count, setCount] = useState([]);
 
+  function handleLogin() {
+    if (emailLogin !== regMail || passLogin !== regPass) {
+      alert("Incorrect email or password. Please register first.");
+    } else {
+      setIsLogin(true);
+      alert(`Welcome ${user}! 👋`);
+    }
+  }
 
-   function Handlelogin()
-       {
-      if(regmail!==emaillog)
-      {
-      alert("Please register..");
-      }
-      else if(regpass!==passlog) {
-        alert("Password not matched..");
-      }
-      else{
-        setIslogin(true)
-      }
-
-
-       }
-       if(islogin){
-        return (  <Context.Provider value={{select1 , setselected,regmail,us ,count,setcount}}>
-          <div className="tol"  style={{background:select1,color: select1 === "black" ? "white" : "black",width:"100%"}}>
-        <BrowserRouter>
-        <Header/>
-        <Nav/>
-        <Rout/>
-        <Foot/>
-        </BrowserRouter>
+  if (isLogin) {
+    return (
+      <Context.Provider
+        value={{
+          select1: theme,
+          setselected: setTheme,
+          regmail: regMail,
+          us: user,
+          count,
+          setcount: setCount,
+        }}
+      >
+        <div
+          className="tol"
+          style={{
+            background: theme,
+            color: theme === "black" ? "white" : "black",
+            width: "100%",
+          }}
+        >
+          <BrowserRouter>
+            <Header />
+            <Nav />
+            <Rout />
+            <Foot />
+          </BrowserRouter>
         </div>
-        </Context.Provider>);
-        
-       }
+      </Context.Provider>
+    );
+  }
 
   return (
     <div className="all">
-
-    <div className="login">
-      {isRegister ? (
-        <Register onBack={() => setIsRegister(false) } em={setregmail} ps={setregpass} usr={setus}/>
-      ) : (
-        <>
-          <h2>Login</h2>
-          <input type="email" placeholder="Email" onChange={(o)=>setemaillog(o.target.value) } />
-          <input type="password" placeholder="Password" onChange={(o)=>setpasslog(o.target.value)} /><br />
-          <input type="checkbox"/> Read Me<br/>
-          <button onClick={Handlelogin}>Login</button><br />
-          <b>Don't have an account ?
-          <u onClick={() => setIsRegister(true)}>Register</u></b>
-        </>
-      )}
-    </div>
-
-
+      <div className="login">
+        {isRegister ? (
+          <Register
+            onBack={() => setIsRegister(false)}
+            em={setRegMail}
+            ps={setRegPass}
+            usr={setUser}
+          />
+        ) : (
+          <>
+            <h2>Login</h2>
+            <input
+              type="email"
+              placeholder="Email"
+              onChange={(e) => setEmailLogin(e.target.value)}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              onChange={(e) => setPassLogin(e.target.value)}
+            />
+            <br />
+            <label>
+              <input type="checkbox" /> Remember me
+            </label>
+            <br />
+            <button onClick={handleLogin}>Login</button>
+            <br />
+            <b>
+              Don’t have an account?{" "}
+              <u onClick={() => setIsRegister(true)} style={{ cursor: "pointer" }}>
+                Register
+              </u>
+            </b>
+          </>
+        )}
+      </div>
     </div>
   );
 }

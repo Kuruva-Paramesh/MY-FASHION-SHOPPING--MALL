@@ -12,6 +12,7 @@ export default function Account(){
     <div className="h3">PASSWORD : *********</div>
     <div className="h3">PRODUCTS :<ul>{count.map((obj)=><li>{obj.title}</li> )}</ul></div>
     <div className="h3">SELECTED QUANITY :{count.length}</div>
+    <div className="h3"> Add Address :<textarea/></div>
    </div>
     );
 }
