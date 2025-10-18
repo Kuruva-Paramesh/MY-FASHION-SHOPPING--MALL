@@ -1,20 +1,22 @@
-import axios from "axios";
 import Context from "../../store.jsx";
 import {useContext} from "react";
 import {Link} from "react-router-dom";
 import "./nav.css";
 import Rout from "../router/router.jsx" 
  export default function Nav(){
-     const {setselected}=useContext(Context);
+     const {setTheme,theme}=useContext(Context);
     function handle(e)
     {
-        setselected(e.target.value);
+        setTheme(e.target.value);
     }
      return(
-    <div className="nav">
-    <select >
-        <option value="" onChange={handle}>Select-Mode</option>
-        <option value="black">Dark-mode</option>
+    <div className="nav" style={{
+            background: "black",
+            color: theme === "black" ? "white" : "black"
+          }}>
+    <select  onChange={handle} value={theme}>
+        <option value="">Select-Mode</option>
+        <option value="lightgray">Dark-mode</option>
         <option value="white">Bright-mode</option>
 
 

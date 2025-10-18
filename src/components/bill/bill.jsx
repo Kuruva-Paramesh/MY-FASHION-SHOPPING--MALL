@@ -5,13 +5,12 @@ import "./bill.css"
 export default function Bill(){
     const [bil,setbil]=useState(false);
     const [qr,qrset]=useState(false);
-
-    const{count,setcount}=useContext(Context);
+    const{count,setCount}=useContext(Context);
     const bill=useMemo(()=>count.reduce((a,b)=>a+b.price,0),[count])
     function handle(props)
     {
-        const newcount=count.filter((x,i)=> i!==props);
-        setcount(newcount);
+        const newcount=count.filter((_,i)=> i!==props);
+        setCount(newcount);
     }
 
      function hand1(){
@@ -27,7 +26,7 @@ export default function Bill(){
     {
         
        bil? (    
-       <div className="acount">
+       <div className="acount" >
         <div className="bill">
         <div className="head">MY FASHION SHOPPING MALL.</div>
         <p className="time">Date:{new Date().toLocaleDateString()}</p>
@@ -46,7 +45,7 @@ export default function Bill(){
        </div>
        </div>
         ):( 
-        <div className="acount">
+        <div className="acount" >
         <div className="h"> YOU ORDER PRODUCTS</div>
         <table>
             <thead>

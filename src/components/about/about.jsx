@@ -1,7 +1,13 @@
 import "./about.css";
+import Context from "../../store";
+import {useContext} from "react";
 export default function About(){
+   const{theme}=useContext(Context);
     return (
-    <div className="detail">
+    <div className="detail" style={{
+            background: theme,
+            color: theme === "black" ? "white" : "black"
+          }}>
      <div className="title">WELCOME TO <br></br>MY FASHION SHOPPING MALL.</div>
      <h2>Shopping Suppliers — Contact List</h2>
   <table>

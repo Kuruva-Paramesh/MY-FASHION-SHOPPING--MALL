@@ -28,7 +28,7 @@ function Register({ onBack, em, ps, usr }) {
       em(email);
       ps(pass);
       usr(username);
-      onBack(); // Go back to login
+      onBack(); 
     }
   }
 
@@ -67,15 +67,13 @@ export default function App() {
   const [isRegister, setIsRegister] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
 
-  // Login & Registration Data
-  const [emailLogin, setEmailLogin] = useState("");
-  const [passLogin, setPassLogin] = useState("");
+  const [emailLogin, setEmailLogin] = useState("login");
+  const [passLogin, setPassLogin] = useState("login");
   const [regMail, setRegMail] = useState("");
   const [regPass, setRegPass] = useState("");
-  const [user, setUser] = useState("");
+  const [us, setUser] = useState("");
 
-  // Context values
-  const [theme, setTheme] = useState("white");
+  const [theme, setTheme] = useState("");
   const [count, setCount] = useState([]);
 
   function handleLogin() {
@@ -83,7 +81,7 @@ export default function App() {
       alert("Incorrect email or password. Please register first.");
     } else {
       setIsLogin(true);
-      alert(`Welcome ${user}! 👋`);
+      alert(`Welcome ${us}! 👋`);
     }
   }
 
@@ -91,21 +89,17 @@ export default function App() {
     return (
       <Context.Provider
         value={{
-          select1: theme,
-          setselected: setTheme,
-          regmail: regMail,
-          us: user,
+         theme,
+          setTheme,
+           regMail,
+             us,
           count,
-          setcount: setCount,
+         setCount,
         }}
       >
         <div
           className="tol"
-          style={{
-            background: theme,
-            color: theme === "black" ? "white" : "black",
-            width: "100%",
-          }}
+          
         >
           <BrowserRouter>
             <Header />

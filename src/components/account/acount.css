@@ -7,6 +7,10 @@
      box-shadow:0 0 10px gray;
 
     }
+    textarea{
+        margin-bottom:50px;
+        margin-left:15px;
+    }
     .h{
         text-align:center;
         padding-top:50px;
